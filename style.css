@@ -1,0 +1,41 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  margin: 5px;
+}
+
+article {
+  max-width: 1170px;
+}
+
+header, footer {
+  padding: 0 10px 5px;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+header h1 {
+  font-weight: normal;
+}
+
+footer a {
+  color: #000;
+}
+
+.chart {
+  padding: 0 10px 10px 0;
+  width: 600px;
+  height: 600px;
+}
+
+svg {
+  font-size: 10px;
+}
