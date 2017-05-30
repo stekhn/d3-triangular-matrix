@@ -2,6 +2,8 @@
 
   'strict';
 
+  var colors = ['#f0f9e8','#ccebc5','#a8ddb5','#7bccc4','#43a2ca','#0868ac']
+
   var margins = {
     top: 120,
     right: 120,
@@ -24,28 +26,30 @@
     var edges = [];
 
     // Parse CSV row by row
-    data = d3.csv.parseRows(data, function (row, i) {
+    data = d3.csv.parseRows(data, function (row, y) {
 
       // Create sources from header 
-      if (i === 0) {
+      if (y === 0) {
 
-        for (var cell in row) {
+        for (var x = 0; x < row.length; x++) {
 
-          sources.push(row[cell])
+          sources.push(row[x])
         }
 
       // Create targets and edges from remaining rows
       } else {
 
-        for (var cell in row) {
+        for (var x = 0; x < row.length; x++) {
 
           // Check if cell is has content and was not linked yet  
-          if (sources[cell] && targets.indexOf(sources[cell]) < 0) {
+          if (sources[x] && targets.indexOf(sources[x]) < 0) {
 
             edges.push({
-              source: sources[cell],
+              source: sources[x],
               target: row[0],
-              weight: row[cell]
+              weight: +row[x],
+              x: +x,
+              y: +y
             })
           }
         }
@@ -72,6 +76,13 @@
     var width = parseFloat(chart.style('width'));
     var height = parseFloat(chart.style('height'));
 
+    var min = d3.min(data.edges, function (d) { return d.weight; });
+    var max = d3.max(data.edges, function (d) { return d.weight; });
+
+    var color = d3.scale.quantile()
+      .domain([min, max])
+      .range(colors);
+
     // var squareSize = (width - margins.right) / data.sources.length;
     var squareSize = 20;
 
@@ -79,7 +90,7 @@
       .attr('width', width)
       .attr('height', height);
 
-    var group = svg.append('g')
+    var group = svg.append('g');
 
     var rows = group.selectAll('.rows')
         .data(data.sources)
@@ -111,15 +122,17 @@
       .attr('dy', 3)
       .text(function (d) { return d; });
 
-    var cells = rows.selectAll('.cell')
-        .data(data.targets)
+    var rects
+
+    var cells = group.selectAll('.cell')
+        .data(data.edges)
         .enter()
       .append('rect')
         .attr('width', squareSize - 2)
         .attr('height', squareSize - 2)
-        .attr ('x', function (d, i) {
-          return squareSize * i;
-        })
-        .attr('fill', 'black');
+        .attr('x', function (d) { return d.x * squareSize })
+        .attr('y', function (d) { return d.y * squareSize })
+        .attr('fill', function (d) { return color(d.weight); })
+        .on('mouseenter', function (d) { console.log(d); })
   }
 })();
