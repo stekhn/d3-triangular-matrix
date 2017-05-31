@@ -1,0 +1,14 @@
+{
+  "name": "d3-triangular-matrix.git",
+  "description": "Visualize undirected graph data as triangular matrix with D3.js",
+  "author": "Steffen Kühne",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:stekhn/d3-triangular-matrix.git"
+  },
+  "dependencies": {
+  }
+}
