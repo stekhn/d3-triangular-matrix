@@ -10,5 +10,6 @@
     "url": "git@github.com:stekhn/d3-triangular-matrix.git"
   },
   "dependencies": {
+    "d3": "^3.5.17"
   }
 }
