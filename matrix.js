@@ -48,8 +48,8 @@
               source: sources[x],
               target: row[0],
               weight: +row[x],
-              x: +x,
-              y: +y
+              x: +x - 1,
+              y: +y - 1
             });
           }
         }
@@ -62,7 +62,11 @@
     // Remove empty entry from sources array;
     sources.shift();
 
-    return edges;
+    return {
+      sources: sources,
+      edges: edges,
+      targets: targets
+    };
   }
 
   function draw(data) {
@@ -70,30 +74,25 @@
     var chart = d3.select('.chart');
 
     var width = parseFloat(chart.style('width'));
-    var height = parseFloat(chart.style('height'));
+    var height = width;
 
-    var min = d3.min(data, function (d) { return d.weight; });
-    var max = d3.max(data, function (d) { return d.weight; });
+    var min = d3.min(data.edges, function (d) { return d.weight; });
+    var max = d3.max(data.edges, function (d) { return d.weight; });
 
     var color = d3.scale.quantile()
       .domain([min, max])
       .range(colors);
 
-    // var squareSize = (width - margins.right) / data.sources.length;
-    var squareSize = 20;
-
-    var scaleSize = 500;
+    var squareDiagonal = Math.sqrt(Math.pow(data.sources.length, 2) + Math.pow(data.targets.length, 2));
+    var squareSize = (width - margins.left - margins.right) / squareDiagonal;
+    var scaleSize = squareSize * Math.min(data.sources.length, data.targets.length);
 
     var xScale = d3.scale.ordinal()
-      .domain(data.map(function (d) {
-        return d.source;
-      }))
-      .rangePoints([0, 500], 1);
+      .domain(data.edges.map(function (d) { return d.source; }))
+      .rangePoints([0, scaleSize], 1);
 
     var yScale = d3.scale.ordinal()
-      .domain(data.map(function (d) {
-        return d.target;
-      }))
+      .domain(data.edges.map(function (d) { return d.target; }))
       .rangePoints([0, scaleSize], 1);
 
     var xAxis = d3.svg.axis()
@@ -110,19 +109,21 @@
       .attr('width', width)
       .attr('height', height);
 
-    var group = svg.append('g');
+    var group = svg.append('g')
+      .attr('transform', 'translate(0,' + height / 2 + ') rotate(-45)');
 
     group.append('g')
         .attr('class', 'x-axis')
         .attr('transform', 'translate(0,' + margins.top + ')')
         .call(xAxis)
       .selectAll('text')
+        .attr('dy', '.5em')
         .attr('transform', 'rotate(90)')
         .style('text-anchor', 'end');
 
     group.append('g')
       .attr('class', 'y-axis')
-      .attr('transform', 'translate(' + (width - margins.right) + ',' + margins.top +')')
+      .attr('transform', 'translate(' + scaleSize + ',' + margins.top +')')
       .call(yAxis);
 
     var cells = group.append('g')
@@ -130,7 +131,7 @@
       .attr('transform', 'translate(0,' + margins.top + ')');
 
     cells.selectAll('.cell')
-        .data(data)
+        .data(data.edges)
         .enter()
       .append('rect')
         .attr('width', squareSize - 2)

@@ -10,10 +10,8 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 12px;
   margin: 5px;
-}
-
-article {
-  max-width: 1170px;
+  max-width: 1200px;
+  height: 100%;
 }
 
 header, footer {
@@ -31,9 +29,8 @@ footer a {
 }
 
 .chart {
-  padding: 0 10px 10px 0;
-  width: 800px;
-  height: 800px;
+  padding: 0 10px 5px;
+  width: 100%;
 }
 
 svg {
