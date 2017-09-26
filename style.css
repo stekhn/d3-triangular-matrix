@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  background: #f0f0f0;
 }
 
 *, *:before, *:after {
@@ -30,6 +31,7 @@ footer a {
 
 .chart {
   width: 100%;
+  background: #fff;
 }
 
 svg {

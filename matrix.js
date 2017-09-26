@@ -1,4 +1,4 @@
-(function matrix() {
+var matrix = (function() {
 
   'strict';
 
@@ -7,20 +7,21 @@
 
   (function init() {
 
-    d3.json('data.json', function (data) {
+    d3.csv('data.csv')
+      .row(row)
+      .get(function (data) {
 
-      draw(transform(data));
-    });
+        draw(data);
+      });
   })();
 
-  function transform(data) {
+  function row(d) {
 
-    // @todo Add sorting and entitiy count here
-    data = data.sort(function (a, b) {
-      return d3.descending(a.weight, b.weight);
-    });
-
-    return data;
+    return {
+      source: d.source,
+      target: d.target,
+      weight: parseFloat(d.weight)
+    };
   }
 
   function draw(data) {
@@ -33,36 +34,35 @@
     var min = d3.min(data, function (d) { return d.weight; });
     var max = d3.max(data, function (d) { return d.weight; });
 
-    var color = d3.scale.quantile()
+    var color = d3.scaleQuantile()
       .domain([min, max])
       .range(colors);
 
-    // @todo Calculate count from data
-    var count = 25;
+    var sources = d3.nest()
+      .key(function(d) { return d.source; })
+      .entries(data);
 
+    var targets = d3.nest()
+      .key(function(d) { return d.source; })
+      .entries(data);
+
+    var count = sources.length;
     var squareDiagonal = Math.sqrt(Math.pow(count, 2) + Math.pow(count, 2));
     var squareSize = (width - margin) / squareDiagonal;
     var scaleSize = squareSize * Math.min(count, count);
 
-    var xScale = d3.scale.ordinal()
-      .domain(data.map(function (d) { return d.x; }))
-      .rangePoints([0, scaleSize], 1);
+    var x = d3.scaleBand()
+      .domain(sources.map(function (d) { return d.key; }))
+      .range([0, scaleSize], 1);
 
-    var yScale = d3.scale.ordinal()
-      .domain(data.map(function (d) { return d.y; }))
-      .rangePoints([0, scaleSize], 1);
+    var y = d3.scaleBand()
+      .domain(targets.map(function (d) { return d.key; }))
+      .range([0, scaleSize], 1);
 
-    console.log(xScale.range());
-    console.log(yScale.range());
-
-    var xAxis = d3.svg.axis()
-      .scale(xScale)
-      .orient('top')
+    var xAxis = d3.axisTop(x)
       .tickSize(0);
 
-    var yAxis = d3.svg.axis()
-      .scale(yScale)
-      .orient('right')
+    var yAxis = d3.axisRight(y)
       .tickSize(0);
 
     var svg = chart.append('svg')
@@ -88,18 +88,16 @@
       .attr('transform', 'translate(' + scaleSize + ',' + margin +')')
       .call(yAxis);
 
-    var cells = group.append('g')
-      .attr('class', 'cells')
-      .attr('transform', 'translate(0,' + margin + ')');
-
-    cells.selectAll('.cell')
+    group.append('g')
+        .attr('transform', 'translate(0,' + margin + ')')
+      .selectAll('rect')
         .data(data)
         .enter()
       .append('rect')
         .attr('width', squareSize - 2)
         .attr('height', squareSize - 2)
-        .attr('x', function (d) { return d.x * squareSize; })
-        .attr('y', function (d) { return d.y * squareSize; })
+        .attr('x', function (d) { return x(d.source); })
+        .attr('y', function (d) { return y(d.target); })
         .attr('fill', function (d) { return color(d.weight); })
         .on('mouseenter', function (d) { console.log(d); });
   }

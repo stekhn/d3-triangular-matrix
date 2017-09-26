@@ -1,26 +1,326 @@
-,Satire,Science fiction,Drama,Action and Adventure,Romance,Mystery,Horror,Self help,Health,Guide,Travel,Children's,"Religion, Spirituality & New Age",Science,History,Math,Anthology,Poetry,Encyclopedias,Dictionaries,Comics,Art,Cookbooks,Diaries,Journals
-Satire,3798,423,19,343,505,227,26,249,195,816,8,11,155,104,281,42,32,3,16,11,6,9,45,151,458
-Science fiction,423,63228,190,44698,21003,2304,583,4505,5011,5276,639,837,4684,3348,28164,1175,777,405,582,299,108,1869,1768,10917,11310
-Drama,19,190,3557,23,1572,79,17,296,267,273,12,80,165,307,861,64,30,23,44,21,1,63,170,900,752
-Action and Adventure,343,44698,23,49492,15685,1599,411,3285,3448,3754,388,627,3508,2317,23303,1149,720,453,604,382,147,709,1317,8730,11365
-Romance,505,21003,1572,15685,65243,3813,949,4008,4599,4347,717,1459,3816,3532,20087,2904,808,1394,2657,1155,483,696,1478,7485,5836
-Mystery,227,2304,79,1599,3813,23945,1300,1792,1702,1703,341,248,1110,1482,1471,94,50,37,48,26,7,109,268,988,467
-Horror,26,583,17,411,949,1300,8293,349,539,268,77,54,238,263,354,66,23,30,24,17,6,26,90,206,100
-Self help,249,4505,296,3285,4008,1792,349,18445,4833,5481,626,250,2404,1197,3029,359,79,126,127,155,42,132,933,3227,642
-Health,195,5011,267,3448,4599,1702,539,4833,25643,3458,908,358,2663,1492,3527,432,110,213,192,162,56,138,1478,3784,891
-Guide,816,5276,273,3754,4347,1703,268,5481,3458,19136,452,287,2494,1457,3422,416,123,157,149,165,64,135,847,3600,1532
-Travel,8,639,12,388,717,341,77,626,908,452,4473,36,137,54,303,20,4,7,9,3,1,25,66,159,83
-Children's,11,837,80,627,1459,248,54,250,358,287,36,3660,169,241,562,140,39,71,132,49,23,28,73,344,267
-"Religion, Spirituality & New Age",155,4684,165,3508,3816,1110,238,2404,2663,2494,137,169,12419,1401,3392,377,102,135,160,142,44,160,926,3268,816
-Science,104,3348,307,2317,3532,1482,263,1197,1492,1457,54,241,1401,12124,2073,183,56,67,82,37,21,102,345,1776,577
-History,281,28164,861,23303,20087,1471,354,3029,3527,3422,303,562,3392,2073,39214,621,327,170,455,127,58,490,1377,7872,6947
-Math,42,1175,64,1149,2904,94,66,359,432,416,20,140,377,183,621,18071,4687,7875,3197,4221,2568,79,110,873,642
-Anthology,32,777,30,720,808,50,23,79,110,123,4,39,102,56,327,4687,7507,1651,635,537,862,31,38,247,509
-Poetry,3,405,23,453,1394,37,30,126,213,157,7,71,135,67,170,7875,1651,10519,1911,2747,2171,34,60,392,204
-Encyclopedias,16,582,44,604,2657,48,24,127,192,149,9,132,160,82,455,3197,635,1911,12650,1579,1071,32,57,422,361
-Dictionaries,11,299,21,382,1155,26,17,155,162,165,3,49,142,37,127,4221,537,2747,1579,5782,1058,25,59,392,148
-Comics,6,108,1,147,483,7,6,42,56,64,1,23,44,21,58,2568,862,2171,1071,1058,4238,15,10,198,92
-Art,9,1869,63,709,696,109,26,132,138,135,25,28,160,102,490,79,31,34,32,25,15,2749,47,273,242
-Cookbooks,45,1768,170,1317,1478,268,90,933,1478,847,66,73,926,345,1377,110,38,60,57,59,10,47,5200,998,382
-Diaries,151,10917,900,8730,7485,988,206,3227,3784,3600,159,344,3268,1776,7872,873,247,392,422,392,198,273,998,20416,2454
-Journals,458,11310,752,11365,5836,467,100,642,891,1532,83,267,816,577,6947,642,509,204,361,148,92,242,382,2454,15877
+source,target,weight
+Satire,Satire,3798
+Science fiction,Satire,423
+Drama,Satire,19
+Action and Adventure,Satire,343
+Romance,Satire,505,4,011
+Mystery,Satire,227
+Horror,Satire,26
+Self help,Satire,249
+Health,Satire,195
+Guide,Satire,816
+Travel,Satire,8
+Children's,Satire,11
+"Religion, Spirituality & New Age",Satire,155
+Science,Satire,104
+History,Satire,281
+Math,Satire,42
+Anthology,Satire,32
+Poetry,Satire,3
+Encyclopedias,Satire,16
+Dictionaries,Satire,11
+Comics,Satire,6
+Art,Satire,9
+Cookbooks,Satire,45
+Diaries,Satire,151
+Journals,Satire,458
+Science fiction,Science fiction,63228
+Drama,Science fiction,190
+Action and Adventure,Science fiction,44698
+Romance,Science fiction,21003
+Mystery,Science fiction,2304
+Horror,Science fiction,583
+Self help,Science fiction,4505
+Health,Science fiction,5011
+Guide,Science fiction,5276
+Travel,Science fiction,639
+Children's,Science fiction,837
+"Religion, Spirituality & New Age",Science fiction,4684
+Science,Science fiction,3348
+History,Science fiction,28164
+Math,Science fiction,1175
+Anthology,Science fiction,777
+Poetry,Science fiction,405
+Encyclopedias,Science fiction,582
+Dictionaries,Science fiction,299
+Comics,Science fiction,108
+Art,Science fiction,1869
+Cookbooks,Science fiction,1768
+Diaries,Science fiction,10917
+Journals,Science fiction,11310
+Drama,Drama,3557
+Action and Adventure,Drama,23
+Romance,Drama,1572
+Mystery,Drama,79
+Horror,Drama,17
+Self help,Drama,296
+Health,Drama,267
+Guide,Drama,273
+Travel,Drama,12
+Children's,Drama,80
+"Religion, Spirituality & New Age",Drama,165
+Science,Drama,307
+History,Drama,861
+Math,Drama,64
+Anthology,Drama,30
+Poetry,Drama,23
+Encyclopedias,Drama,44
+Dictionaries,Drama,21
+Comics,Drama,1
+Art,Drama,63
+Cookbooks,Drama,170
+Diaries,Drama,900
+Journals,Drama,752
+Action and Adventure,Action and Adventure,49492
+Romance,Action and Adventure,15685
+Mystery,Action and Adventure,1599
+Horror,Action and Adventure,411
+Self help,Action and Adventure,3285
+Health,Action and Adventure,3448
+Guide,Action and Adventure,3754
+Travel,Action and Adventure,388
+Children's,Action and Adventure,627
+"Religion, Spirituality & New Age",Action and Adventure,3508
+Science,Action and Adventure,2317
+History,Action and Adventure,23303
+Math,Action and Adventure,1149
+Anthology,Action and Adventure,720
+Poetry,Action and Adventure,453
+Encyclopedias,Action and Adventure,604
+Dictionaries,Action and Adventure,382
+Comics,Action and Adventure,147
+Art,Action and Adventure,709
+Cookbooks,Action and Adventure,1317
+Diaries,Action and Adventure,8730
+Journals,Action and Adventure,11365
+Romance,Romance,65243
+Mystery,Romance,3813
+Horror,Romance,949
+Self help,Romance,4008
+Health,Romance,4599
+Guide,Romance,4347
+Travel,Romance,717
+Children's,Romance,1459
+"Religion, Spirituality & New Age",Romance,3816
+Science,Romance,3532
+History,Romance,20087
+Math,Romance,2904
+Anthology,Romance,808
+Poetry,Romance,1394
+Encyclopedias,Romance,2657
+Dictionaries,Romance,1155
+Comics,Romance,483
+Art,Romance,696
+Cookbooks,Romance,1478
+Diaries,Romance,7485
+Journals,Romance,5836
+Mystery,Mystery,23945
+Horror,Mystery,1300
+Self help,Mystery,1792
+Health,Mystery,1702
+Guide,Mystery,1703
+Travel,Mystery,341
+Children's,Mystery,248
+"Religion, Spirituality & New Age",Mystery,1110
+Science,Mystery,1482
+History,Mystery,1471
+Math,Mystery,94
+Anthology,Mystery,50
+Poetry,Mystery,37
+Encyclopedias,Mystery,48
+Dictionaries,Mystery,26
+Comics,Mystery,7
+Art,Mystery,109
+Cookbooks,Mystery,268
+Diaries,Mystery,988
+Journals,Mystery,467
+Horror,Horror,8293
+Self help,Horror,349
+Health,Horror,539
+Guide,Horror,268
+Travel,Horror,77
+Children's,Horror,54
+"Religion, Spirituality & New Age",Horror,238
+Science,Horror,263
+History,Horror,354
+Math,Horror,66
+Anthology,Horror,23
+Poetry,Horror,30
+Encyclopedias,Horror,24
+Dictionaries,Horror,17
+Comics,Horror,6
+Art,Horror,26
+Cookbooks,Horror,90
+Diaries,Horror,206
+Journals,Horror,100
+Self help,Self help,18445
+Health,Self help,4833
+Guide,Self help,5481
+Travel,Self help,626
+Children's,Self help,250
+"Religion, Spirituality & New Age",Self help,2404
+Science,Self help,1197
+History,Self help,3029
+Math,Self help,359
+Anthology,Self help,79
+Poetry,Self help,126
+Encyclopedias,Self help,127
+Dictionaries,Self help,155
+Comics,Self help,42
+Art,Self help,132
+Cookbooks,Self help,933
+Diaries,Self help,3227
+Journals,Self help,642
+Health,Health,25643
+Guide,Health,3458
+Travel,Health,908
+Children's,Health,358
+"Religion, Spirituality & New Age",Health,2663
+Science,Health,1492
+History,Health,3527
+Math,Health,432
+Anthology,Health,110
+Poetry,Health,213
+Encyclopedias,Health,192
+Dictionaries,Health,162
+Comics,Health,56
+Art,Health,138
+Cookbooks,Health,1478
+Diaries,Health,3784
+Journals,Health,891
+Guide,Guide,19136
+Travel,Guide,452
+Children's,Guide,287
+"Religion, Spirituality & New Age",Guide,2494
+Science,Guide,1457
+History,Guide,3422
+Math,Guide,416
+Anthology,Guide,123
+Poetry,Guide,157
+Encyclopedias,Guide,149
+Dictionaries,Guide,165
+Comics,Guide,64
+Art,Guide,135
+Cookbooks,Guide,847
+Diaries,Guide,3600
+Journals,Guide,1532
+Travel,Travel,4473
+Children's,Travel,36
+"Religion, Spirituality & New Age",Travel,137
+Science,Travel,54
+History,Travel,303
+Math,Travel,20
+Anthology,Travel,4
+Poetry,Travel,7
+Encyclopedias,Travel,9
+Dictionaries,Travel,3
+Comics,Travel,1
+Art,Travel,25
+Cookbooks,Travel,66
+Diaries,Travel,159
+Journals,Travel,83
+Children's,Children's,3660
+"Religion, Spirituality & New Age",Children's,169
+Science,Children's,241
+History,Children's,562
+Math,Children's,140
+Anthology,Children's,39
+Poetry,Children's,71
+Encyclopedias,Children's,132
+Dictionaries,Children's,49
+Comics,Children's,23
+Art,Children's,28
+Cookbooks,Children's,73
+Diaries,Children's,344
+Journals,Children's,267
+"Religion, Spirituality & New Age","Religion, Spirituality & New Age",12419
+Science,"Religion, Spirituality & New Age",1401
+History,"Religion, Spirituality & New Age",3392
+Math,"Religion, Spirituality & New Age",377
+Anthology,"Religion, Spirituality & New Age",102
+Poetry,"Religion, Spirituality & New Age",135
+Encyclopedias,"Religion, Spirituality & New Age",160
+Dictionaries,"Religion, Spirituality & New Age",142
+Comics,"Religion, Spirituality & New Age",44
+Art,"Religion, Spirituality & New Age",160
+Cookbooks,"Religion, Spirituality & New Age",926
+Diaries,"Religion, Spirituality & New Age",3268
+Journals,"Religion, Spirituality & New Age",816
+Science,Science,12124
+History,Science,2073
+Math,Science,183
+Anthology,Science,56
+Poetry,Science,67
+Encyclopedias,Science,82
+Dictionaries,Science,37
+Comics,Science,21
+Art,Science,102
+Cookbooks,Science,345
+Diaries,Science,1776
+Journals,Science,577
+History,History,39214
+Math,History,621
+Anthology,History,327
+Poetry,History,170
+Encyclopedias,History,455
+Dictionaries,History,127
+Comics,History,58
+Art,History,490
+Cookbooks,History,1377
+Diaries,History,7872
+Journals,History,6947
+Math,Math,18071
+Anthology,Math,4687
+Poetry,Math,7875
+Encyclopedias,Math,3197
+Dictionaries,Math,4221
+Comics,Math,2568
+Art,Math,79
+Cookbooks,Math,110
+Diaries,Math,873
+Journals,Math,642
+Anthology,Anthology,7507
+Poetry,Anthology,1651
+Encyclopedias,Anthology,635
+Dictionaries,Anthology,537
+Comics,Anthology,862
+Art,Anthology,31
+Cookbooks,Anthology,38
+Diaries,Anthology,247
+Journals,Anthology,509
+Poetry,Poetry,10519
+Encyclopedias,Poetry,1911
+Dictionaries,Poetry,2747
+Comics,Poetry,2171
+Art,Poetry,34
+Cookbooks,Poetry,60
+Diaries,Poetry,392
+Journals,Poetry,204
+Encyclopedias,Encyclopedias,12650
+Dictionaries,Encyclopedias,1579
+Comics,Encyclopedias,1071
+Art,Encyclopedias,32
+Cookbooks,Encyclopedias,57
+Diaries,Encyclopedias,422
+Journals,Encyclopedias,361
+Dictionaries,Dictionaries,5782
+Comics,Dictionaries,1058
+Art,Dictionaries,25
+Cookbooks,Dictionaries,59
+Diaries,Dictionaries,392
+Journals,Dictionaries,148
+Comics,Comics,4238
+Art,Comics,15
+Cookbooks,Comics,10
+Diaries,Comics,198
+Journals,Comics,92
+Art,Art,2749
+Cookbooks,Art,47
+Diaries,Art,273
+Journals,Art,242
+Cookbooks,Cookbooks,5200
+Diaries,Cookbooks,998
+Journals,Cookbooks,382
+Diaries,Diaries,20416
+Journals,Diaries,2454
+Journals,Journals,15877
